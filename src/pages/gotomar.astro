@@ -1,0 +1,558 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Gotomar | GTM Strategy in Minutes" description="Upload your PRD and get a complete go-to-market strategy with implementation advice in minutes. AI-powered, self-serve, built for technical founders.">
+
+    <!-- Hero -->
+    <section class="gotomar-hero">
+        <div class="container">
+            <div class="built-for">BUILT FOR TECHNICAL FOUNDERS &bull; INDIE HACKERS &bull; VIBE CODERS</div>
+            <h1>Get a GTM strategy with <span class="gradient-text">implementation advice</span> in minutes</h1>
+            <p class="subtitle">Upload your PRD or describe your product. AI builds your go-to-market playbook with positioning, outreach scripts, website fixes, and more.</p>
+
+            <form class="prompt-box" id="waitlist">
+                <input type="email" placeholder="Enter your email address..." id="waitlist-email" required>
+                <button type="submit" id="waitlist-btn">Join Waiting List &rarr;</button>
+            </form>
+            <p class="prompt-hint" id="waitlist-thanks" style="display:none; font-size: 1rem; color: var(--color-accent-light);">You're on the list! We'll let you know when Gotomar is ready.</p>
+            <p class="prompt-hint" id="waitlist-hint">Be the first to know when Gotomar launches.</p>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section">
+        <div class="container how-section">
+            <p class="section-label" style="text-align:center">How it works</p>
+            <h2 class="section-title" style="text-align:center">From zero to GTM in three steps</h2>
+            <div class="how-grid">
+                <div class="how-card">
+                    <div class="how-number">1</div>
+                    <h3>Describe your product</h3>
+                    <p>Upload your PRD, paste a brief, or just describe what you've built. The more context, the sharper the strategy.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-number">2</div>
+                    <h3>AI builds your playbook</h3>
+                    <p>Gotomar analyses your product, scores your website, builds positioning, and generates outbound and inbound strategies you can use today.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-number">3</div>
+                    <h3>Execute and iterate</h3>
+                    <p>Get priority fixes, email scripts, and frameworks. Track your progress module by module. Optionally add a coaching call for expert review.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What you get -->
+    <section id="modules" class="section section-alt">
+        <div class="container">
+            <p class="section-label" style="text-align:center">What you get</p>
+            <h2 class="section-title" style="text-align:center">Everything you need to go to market</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-tag">Website</span>
+                    <h3>Website Score &amp; Fixes</h3>
+                    <p>AI scores your landing page on messaging clarity, CTAs, trust signals, and SEO. Get a prioritised list of what to fix and exactly how.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-tag">Positioning</span>
+                    <h3>Positioning &amp; Methodology</h3>
+                    <p>Problems you solve, how you solve them, competitive battlecards, objection handling, and a qualification framework using MEDDIC, BANT, Challenger, or SPIN.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-tag">Outbound</span>
+                    <h3>Outbound Playbook</h3>
+                    <p>Multi-step email sequences, LinkedIn outreach templates, cold call scripts with objection handling, and a day-by-day outbound cadence.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-tag">Inbound</span>
+                    <h3>Inbound Strategy</h3>
+                    <p>SEO topics with keywords, a 12-week content calendar, lead magnet ideas, social media strategy, and community building approach.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-tag">Tooling</span>
+                    <h3>Tech Stack &amp; CRM</h3>
+                    <p>CRM recommendations, email tools, analytics, automation &mdash; with setup steps and pipeline configuration matched to your methodology.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-tag">Legal</span>
+                    <h3>Legal &amp; Compliance</h3>
+                    <p>Contract templates, privacy policy, terms of service, and compliance checklists tailored to your product and market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <p class="section-label" style="text-align:center">Pricing</p>
+            <h2 class="section-title" style="text-align:center">Planned pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="price">$50</div>
+                    <div class="price-label">One-time</div>
+                    <h3 style="font-family: var(--font-heading); font-weight: 600; margin-bottom: 16px;">GTM Report</h3>
+                    <ul>
+                        <li>Free strategy summary preview</li>
+                        <li>Full report across all 6 modules</li>
+                        <li>Priority fixes &amp; recommendations</li>
+                        <li>Email scripts &amp; outreach templates</li>
+                        <li>Downloadable PDF report</li>
+                        <li>Lifetime access</li>
+                    </ul>
+                    <a href="#waitlist" class="btn btn-outline" style="width:100%; text-align:center;">Join Waiting List</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most popular</div>
+                    <div class="price">$100</div>
+                    <div class="price-label">One-time</div>
+                    <h3 style="font-family: var(--font-heading); font-weight: 600; margin-bottom: 16px;">Report + Coaching</h3>
+                    <ul>
+                        <li>Everything in GTM Report</li>
+                        <li>30-min 1:1 call with a sales leader</li>
+                        <li>Personalised strategy review</li>
+                        <li>Sales methodology walkthrough</li>
+                        <li>Priority action plan</li>
+                        <li>Follow-up summary email</li>
+                    </ul>
+                    <a href="#waitlist" class="btn btn-primary" style="width:100%; text-align:center;">Join Waiting List</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt">
+        <div class="container faq-section">
+            <p class="section-label" style="text-align:center">FAQ</p>
+            <h2 class="section-title" style="text-align:center">Common questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-toggle">
+                        Do I need sales experience to use this?
+                        <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No. Gotomar is built for technical founders who've never done sales or marketing. The output is actionable &mdash; scripts you can send, pages you can fix, frameworks you can follow.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">
+                        What do I need to get started?
+                        <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Just a description of your product. A PRD is ideal, but even a few paragraphs about what you've built and who it's for is enough. We provide a template to help.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">
+                        How long does it take?
+                        <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The strategy summary is generated in under a minute. Full module content across all 6 areas takes a few minutes. You can start executing the same day.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">
+                        What's the coaching call?
+                        <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">A 30-minute 1:1 call with an experienced sales and GTM leader who'll review your strategy, pressure-test your positioning, and help you prioritise what to do first. It's the $100 plan.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-toggle">
+                        Can I try it before paying?
+                        <span class="faq-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Gotomar isn't live yet, but join the waiting list and you'll be the first to try it. We're planning a free strategy summary so you can see the value before paying.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+        <div class="container final-cta">
+            <h2 class="section-title">Stop guessing. Start selling.</h2>
+            <p>Gotomar is coming soon. Join the waiting list to get early access.</p>
+            <a href="#waitlist" class="btn btn-primary">Join Waiting List &rarr;</a>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* Hero with input */
+    .gotomar-hero {
+        padding: 120px 0 40px;
+        text-align: center;
+    }
+    .gotomar-hero h1 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .gotomar-hero .subtitle {
+        font-size: 1.15rem;
+        color: var(--color-text-muted);
+        max-width: 560px;
+        margin: 0 auto 36px;
+        line-height: 1.7;
+    }
+
+    /* Prompt box */
+    .prompt-box {
+        max-width: 600px;
+        margin: 0 auto;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .prompt-box:focus-within {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px var(--color-accent-glow);
+    }
+    .prompt-box input {
+        flex: 1;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        font-size: 1rem;
+        padding: 12px 16px;
+        outline: none;
+        font-family: var(--font-body);
+    }
+    .prompt-box input::placeholder {
+        color: var(--color-text-muted);
+    }
+    .prompt-box button {
+        background: var(--color-accent);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: var(--font-body);
+        cursor: pointer;
+        transition: background var(--transition);
+        white-space: nowrap;
+    }
+    .prompt-box button:hover {
+        background: var(--color-accent-light);
+    }
+    .prompt-hint {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+    }
+    .prompt-hint a {
+        color: var(--color-accent-light);
+        text-decoration: underline;
+    }
+
+    /* Override base section padding for tighter layout */
+    .section {
+        padding: 56px 0 !important;
+    }
+    .section-title {
+        margin-bottom: 24px !important;
+    }
+
+    /* Logos */
+    .built-for {
+        text-align: center;
+        padding: 0 0 16px;
+        color: var(--color-text-muted);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+    }
+
+    /* How section */
+    .how-section {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .how-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-top: 40px;
+    }
+    .how-card {
+        text-align: center;
+        padding: 16px;
+    }
+    .how-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--color-accent-glow);
+        border: 1px solid var(--color-accent);
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--color-accent-light);
+        margin-bottom: 20px;
+    }
+    .how-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .how-card p {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    /* Modules */
+    .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+    .module-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 24px;
+        transition: all var(--transition);
+    }
+    .module-card:hover {
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+    .module-card .module-tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-accent-light);
+        background: var(--color-accent-glow);
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin-bottom: 14px;
+    }
+    .module-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .module-card p {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pricing-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        transition: all var(--transition);
+    }
+    .pricing-card:hover {
+        border-color: var(--color-accent);
+    }
+    .pricing-card.featured {
+        border-color: var(--color-accent);
+        background: rgba(99, 102, 241, 0.05);
+        position: relative;
+    }
+    .pricing-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-accent);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 14px;
+        border-radius: 20px;
+    }
+    .pricing-card .price {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    .pricing-card .price-label {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+    .pricing-card ul {
+        flex: 1;
+        margin-bottom: 28px;
+    }
+    .pricing-card li {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        padding: 6px 0;
+        padding-left: 24px;
+        position: relative;
+    }
+    .pricing-card li::before {
+        content: '\2713';
+        position: absolute;
+        left: 0;
+        color: var(--color-accent-light);
+        font-weight: 600;
+    }
+
+    /* FAQ */
+    .faq-section {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    .faq-list {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .faq-item {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--color-surface);
+    }
+    .faq-toggle {
+        width: 100%;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        transition: color var(--transition);
+    }
+    .faq-toggle:hover { color: var(--color-accent-light); }
+    .faq-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+        padding: 0 24px 20px;
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* CTA */
+    .final-cta {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .final-cta p {
+        color: var(--color-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: 768px) {
+        .gotomar-hero { padding: 120px 0 80px; }
+        .gotomar-hero h1 { font-size: 2.2rem; }
+        .prompt-box { flex-direction: column; }
+        .prompt-box button { width: 100%; }
+        .how-grid { grid-template-columns: 1fr; gap: 16px; }
+        .modules-grid { grid-template-columns: 1fr; }
+        .pricing-grid { grid-template-columns: 1fr; }
+    }
+</style>
+
+<script>
+    // FAQ toggles
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement?.classList.toggle('open');
+        });
+    });
+
+    // Waitlist form
+    async function handleWaitlist(e: Event) {
+        e.preventDefault();
+        const btn = document.getElementById('waitlist-btn') as HTMLButtonElement;
+        const emailInput = document.getElementById('waitlist-email') as HTMLInputElement;
+        const email = emailInput.value;
+        btn.disabled = true;
+        btn.textContent = 'Joining...';
+        try {
+            const res = await fetch('https://gotomar.liam-james.uk/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            });
+            if (res.ok || res.status === 200) {
+                document.getElementById('waitlist')!.style.display = 'none';
+                document.getElementById('waitlist-thanks')!.style.display = 'block';
+                document.getElementById('waitlist-hint')!.style.display = 'none';
+            } else {
+                const data = await res.json();
+                btn.textContent = data.error || 'Something went wrong — try again';
+                btn.disabled = false;
+                setTimeout(() => { btn.textContent = 'Join Waiting List \u2192'; }, 3000);
+            }
+        } catch (err) {
+            btn.textContent = 'Connection error — try again';
+            btn.disabled = false;
+            setTimeout(() => { btn.textContent = 'Join Waiting List \u2192'; }, 3000);
+        }
+    }
+
+    document.getElementById('waitlist')?.addEventListener('submit', handleWaitlist);
+</script>

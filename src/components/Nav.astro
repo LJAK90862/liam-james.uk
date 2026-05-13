@@ -1,0 +1,40 @@
+---
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const aboutHref = isHomepage ? '#about' : '/#about';
+const servicesHref = isHomepage ? '#services' : '/#services';
+---
+
+<nav class="nav">
+    <div class="container nav-inner">
+        <a href="/" class="nav-logo">Liam James</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href={aboutHref}>About</a></li>
+            <li><a href={servicesHref}>Services</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/gotomar">Gotomar</a></li>
+            <li><a href="https://cal.com/liam-james/30min" class="btn btn-sm">Book a Call</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<script>
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle?.addEventListener('click', () => {
+        navLinks?.classList.toggle('active');
+        toggle.classList.toggle('active');
+    });
+
+    navLinks?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            toggle?.classList.remove('active');
+        });
+    });
+</script>

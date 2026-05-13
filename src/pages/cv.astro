@@ -1,0 +1,458 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liam James — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        .page {
+            max-width: 210mm;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 297mm;
+        }
+
+        /* ---- Sidebar ---- */
+        .sidebar {
+            background: #1e2a3a;
+            color: #fff;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .sidebar-content {
+            padding: 24px 20px;
+            flex: 1;
+        }
+
+        .sidebar h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .sidebar-section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar-section p,
+        .sidebar-section li {
+            font-size: 9pt;
+            color: #c8d0da;
+            line-height: 1.6;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section ul li {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .sidebar-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #7b8da0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 9pt;
+            color: #c8d0da;
+        }
+
+        .contact-item span.icon {
+            font-size: 11pt;
+        }
+
+        .edu-entry {
+            margin-bottom: 12px;
+        }
+
+        .edu-entry .edu-title {
+            font-weight: 600;
+            color: #fff;
+            font-size: 9pt;
+        }
+
+        .edu-entry .edu-school {
+            font-size: 8.5pt;
+            color: #9aa8b8;
+        }
+
+        .sidebar-location {
+            margin-top: auto;
+            text-align: center;
+            font-size: 9pt;
+            color: #9aa8b8;
+            padding-top: 20px;
+        }
+
+        /* ---- Testimonial ---- */
+        .testimonial {
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid #7b8da0;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .testimonial p {
+            font-size: 8.5pt;
+            font-style: italic;
+            color: #c8d0da;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .testimonial .testimonial-author {
+            font-size: 8pt;
+            font-style: normal;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .testimonial .testimonial-role {
+            font-size: 7.5pt;
+            font-style: normal;
+            color: #9aa8b8;
+        }
+
+        /* ---- Main Content ---- */
+        .main {
+            padding: 36px 32px;
+        }
+
+        .main-header {
+            margin-bottom: 20px;
+        }
+
+        .main-header h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .main-header h2 {
+            font-size: 13pt;
+            font-weight: 500;
+            color: #5a6a7a;
+            margin-top: 2px;
+        }
+
+        .summary {
+            font-size: 10pt;
+            line-height: 1.7;
+            color: #3a3a3a;
+            margin-bottom: 28px;
+            max-width: 520px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #1e2a3a;
+        }
+
+        /* ---- Job Entry ---- */
+        .job {
+            margin-bottom: 22px;
+        }
+
+        .job-header {
+            margin-bottom: 6px;
+        }
+
+        .job-company {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-company-desc {
+            font-size: 9pt;
+            color: #6a7a8a;
+        }
+
+        .job-role {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #2a3a4a;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #7a8a9a;
+            margin-bottom: 6px;
+        }
+
+        .job ul {
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        .job ul li {
+            font-size: 9.5pt;
+            color: #3a3a3a;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+            line-height: 1.6;
+        }
+
+        .job ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #1e2a3a;
+        }
+
+        .references {
+            margin-top: 24px;
+            font-size: 9pt;
+            color: #7a8a9a;
+            font-style: italic;
+        }
+
+        /* ---- Print ---- */
+        @media print {
+            body { background: #fff; }
+            .page {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <img src="/assets/headshot.jpeg" alt="Liam James" class="sidebar-photo">
+        <div class="sidebar-content">
+
+            <div class="sidebar-section">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <span class="icon">+371 27839471</span>
+                </div>
+                <div class="contact-item">
+                    <span>info@liam-james.uk</span>
+                </div>
+                <div class="contact-item">
+                    <span>linkedin.com/in/ljak</span>
+                </div>
+                <div class="contact-item">
+                    <span>liam-james.uk</span>
+                </div>
+                <div class="contact-item">
+                    <span>Latvia, UK, Remote</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Sales leadership</li>
+                    <li>GTM strategy & execution</li>
+                    <li>Sales enablement</li>
+                    <li>Partnership development</li>
+                    <li>Lead generation</li>
+                    <li>Negotiation & closing</li>
+                    <li>Forecasting</li>
+                    <li>Team coaching</li>
+                    <li>Strategic planning</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Education</h3>
+                <div class="edu-entry">
+                    <p class="edu-title">BSc, Police & Criminal Investigation</p>
+                    <p class="edu-school">University of Central Lancashire | 2012 &ndash; 2015</p>
+                </div>
+                <div class="edu-entry">
+                    <p class="edu-title">BTEC Diploma, Public Services</p>
+                    <p class="edu-school">Aylesbury College | 2010 &ndash; 2012</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul>
+                    <li>Force Management</li>
+                    <li>Salesforce</li>
+                    <li>Slack</li>
+                    <li>GitHub</li>
+                    <li>Jira & Confluence</li>
+                    <li>Google Workspace</li>
+                    <li>Microsoft Office</li>
+                    <li>Zoom & Teams</li>
+                    <li>CRM & enablement tools</li>
+                </ul>
+            </div>
+
+            <div class="testimonial">
+                <p>"As an Account Executive, Liam's performance was nothing short of exceptional. He consistently exceeded quotas and quickly became the top-performing sales representative at Lokalise."</p>
+                <span class="testimonial-author">Niklas Hisginer</span><br>
+                <span class="testimonial-role">CS Manager, Lokalise</span>
+            </div>
+
+            <div class="testimonial">
+                <p>"As a manager, Liam always stood up for his team and made sure that we're equipped with the right skills, mindset and tools to perform our best."</p>
+                <span class="testimonial-author">Ismails Ahmed</span><br>
+                <span class="testimonial-role">Senior AE, ChartMogul</span>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <div class="main-header">
+            <h1>Liam James</h1>
+            <h2>Sales & GTM Leader</h2>
+        </div>
+
+        <p class="summary">English by birth, Latvian by choice. Most of my career has been spent at the sharp end of revenue: building sales teams, designing enablement programmes, and figuring out what actually makes deals close. At Lokalise, I played a key role in scaling ARR from &euro;1M to &euro;30M, contributing approximately &euro;7M in direct revenue across five years and four roles. Today I build sales systems and GTM strategies so startups can turn early traction into repeatable revenue.</p>
+
+        <h3 class="section-title">Work Experience</h3>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-company">tem energy</span>
+                <span class="job-company-desc"> &mdash; Remote | AI-Powered Energy Platform</span>
+            </div>
+            <p class="job-role">Sales & Partnerships Manager</p>
+            <p class="job-date">Sep 2025 &ndash; Mar 2026</p>
+            <ul>
+                <li>Led sales and partnership growth, driving pipeline development and market expansion.</li>
+                <li>Built scalable GTM systems with repeatable sales processes and partnership programmes.</li>
+                <li>Coached the commercial team on strategic, consultative selling.</li>
+                <li>Partnered cross-functionally with Product, Marketing, and Design.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-company">Lokalise</span>
+                <span class="job-company-desc"> &mdash; Remote | SaaS Localization Platform</span>
+            </div>
+
+            <p class="job-role">Sales Enablement Lead</p>
+            <p class="job-date">Jan 2025 &ndash; Aug 2025</p>
+            <ul>
+                <li>Designed and implemented onboarding and continuous sales training programmes.</li>
+                <li>Developed sales collateral and tools to improve rep performance and deal velocity.</li>
+                <li>Aligned enablement initiatives with strategic sales goals, collaborating across Product, Marketing, and Sales Ops.</li>
+            </ul>
+
+            <p class="job-role" style="margin-top: 14px;">Sales Manager</p>
+            <p class="job-date">Nov 2023 &ndash; Feb 2025</p>
+            <ul>
+                <li>Recruited, trained, and led a team of sales reps, managing performance and KPIs.</li>
+                <li>Executed sales strategies aligned to revenue goals and forecasted accurately to leadership.</li>
+                <li>Drove cross-functional initiatives to improve customer journey and sales effectiveness.</li>
+            </ul>
+
+            <p class="job-role" style="margin-top: 14px;">Account Executive Team Lead</p>
+            <p class="job-date">Mar 2023 &ndash; Nov 2023</p>
+            <ul>
+                <li>Led a high-performing AE team; exceeded target at 120% attainment.</li>
+                <li>Managed strategic enterprise deals from discovery through close.</li>
+                <li>Acted as bridge between reps and leadership, feeding market insight into GTM planning.</li>
+            </ul>
+
+            <p class="job-role" style="margin-top: 14px;">Senior Account Executive</p>
+            <p class="job-date">Jul 2022 &ndash; Mar 2023</p>
+            <ul>
+                <li>Delivered 110&ndash;120% quota attainment across two quarters.</li>
+                <li>Closed high-value enterprise deals; mentored junior AEs.</li>
+                <li>Provided market feedback to influence product development and GTM alignment.</li>
+            </ul>
+
+            <p class="job-role" style="margin-top: 14px;">Account Executive</p>
+            <p class="job-date">Feb 2020 &ndash; Jul 2022</p>
+            <ul>
+                <li>Prospected and closed deals with high-fit accounts; 2021 performance at 160%.</li>
+                <li>Ran end-to-end sales cycles including demo, negotiation, and onboarding.</li>
+                <li>Managed pipeline and account growth with strong customer retention.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-company">Sales & Business Coach</span>
+                <span class="job-company-desc"> &mdash; Riga, Latvia (Self-employed)</span>
+            </div>
+            <p class="job-date">Apr 2018 &ndash; Feb 2020</p>
+            <ul>
+                <li>Trained early-stage businesses on lead generation, value-selling, and deal closing.</li>
+                <li>Delivered 1:1 coaching to founders and SDRs on sales process optimisation.</li>
+                <li>Designed early-stage tech stack workflows.</li>
+            </ul>
+        </div>
+
+        <p class="references">References available on request.</p>
+
+    </main>
+</div>
+
+</body>
+</html>
