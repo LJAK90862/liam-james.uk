@@ -3,7 +3,7 @@ title: "We Replaced Spreadsheets with AI Deal Rooms"
 description: "How I built a deal room portal for energy brokerage that replaced spreadsheet chaos with automated stage-based workflows."
 pubDate: 2026-05-26
 tags: ["edge-energy", "ai", "sales-tools"]
-draft: true
+draft: false
 ---
 
 Energy brokerage is a mess. I don't mean that in a Silicon Valley "let's disrupt it" way — I mean it's literally people emailing spreadsheets back and forth, losing track of which customer is at which stage, and wondering why their pipeline is a disaster.
