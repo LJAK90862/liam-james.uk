@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides'))
+  .filter(g => !g.data.draft);
+---
+
+<BaseLayout title="Guides — Liam James" description="Paid guides on GTM strategy, AI agents, and building automated sales systems.">
+  <section class="section">
+    <div class="container">
+      <p class="section-label" style="text-align:center">Guides</p>
+      <h1 class="section-title" style="text-align:center">Playbooks that work</h1>
+      <p style="text-align:center; color: var(--color-text-muted); max-width: 600px; margin: 0 auto 3rem;">
+        Not courses. Not theory. These are the exact systems I use, packaged so you can use them too.
+      </p>
+
+      <div class="guides-grid">
+        {guides.map(guide => (
+          <a href={`/guides/${guide.id}/`} class="guide-card">
+            <div class="guide-card-price">${(guide.data.price / 100).toFixed(0)}</div>
+            <h2 class="guide-card-title">{guide.data.title}</h2>
+            <p class="guide-card-desc">{guide.data.description}</p>
+            <span class="guide-card-cta">View guide &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .guides-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .guide-card {
+    display: block;
+    padding: 2.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+
+  .guide-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  .guide-card-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  .guide-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .guide-card-desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .guide-card-cta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map(guide => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const price = `$${(guide.data.price / 100).toFixed(0)}`;
+---
+
+<BaseLayout title={`${guide.data.title} — Liam James`} description={guide.data.description}>
+  <section class="guide-page">
+    <div class="container">
+      <a href="/guides" class="back-link">&larr; Back to guides</a>
+
+      <div class="guide-header">
+        <span class="guide-price">{price}</span>
+        <h1 class="guide-title">{guide.data.title}</h1>
+        <p class="guide-desc">{guide.data.description}</p>
+      </div>
+
+      <div class="guide-content prose">
+        <Content />
+      </div>
+
+      <div class="guide-buy">
+        <div class="guide-buy-inner">
+          <h3>Get the full guide</h3>
+          <p>PDF + templates + future updates. One-time payment.</p>
+          <button id="buy-btn" class="btn btn-primary btn-lg" data-price={guide.data.stripePriceId || ''}>
+            Buy for {price}
+          </button>
+          <p class="buy-note">Delivered instantly via email after purchase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const btn = document.getElementById('buy-btn') as HTMLButtonElement;
+  const priceId = btn?.dataset.price;
+
+  btn?.addEventListener('click', async () => {
+    if (!priceId) {
+      alert('This guide is coming soon. Check back shortly.');
+      return;
+    }
+
+    btn.textContent = 'Redirecting...';
+    btn.disabled = true;
+
+    try {
+      // Redirect to Stripe Checkout
+      const stripe = await import('https://js.stripe.com/v3/').then(() =>
+        // @ts-ignore
+        Stripe(import.meta.env.PUBLIC_STRIPE_PUBLISHABLE_KEY)
+      );
+
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: [{ price: priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/guides/thanks/',
+        cancelUrl: window.location.href,
+      });
+
+      if (error) {
+        alert(error.message);
+        btn.textContent = `Buy for ${btn.closest('.guide-buy')?.querySelector('h3')?.textContent}`;
+        btn.disabled = false;
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .guide-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+
+  .guide-header {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+  }
+
+  .guide-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .guide-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  .guide-desc {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .guide-buy {
+    max-width: 720px;
+    margin: 3rem auto 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .guide-buy-inner {
+    text-align: center;
+  }
+
+  .guide-buy h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-buy > .guide-buy-inner > p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-lg {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
+  .buy-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .guide-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
